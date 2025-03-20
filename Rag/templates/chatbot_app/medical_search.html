@@ -1,0 +1,522 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Medical Knowledge Search</title>
+    <style>
+        :root {
+            --primary-color: #4285f4;
+            --secondary-color: #34a853;
+            --accent-color: #fbbc05;
+            --text-color: #333;
+            --light-bg: #f8f9fa;
+            --border-color: #ddd;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            color: var(--text-color);
+            background-color: #f5f5f5;
+        }
+        
+        header {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 15px 20px;
+            text-align: center;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        
+        h1 {
+            margin: 0;
+            font-size: 1.8rem;
+        }
+        
+        .nav-bar {
+            background-color: white;
+            display: flex;
+            justify-content: center;
+            padding: 10px 0;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+            margin-bottom: 20px;
+        }
+        
+        .nav-links {
+            display: flex;
+            gap: 20px;
+        }
+        
+        .nav-link {
+            padding: 8px 15px;
+            text-decoration: none;
+            color: var(--text-color);
+            border-radius: 5px;
+            font-weight: bold;
+            transition: background-color 0.3s, color 0.3s;
+        }
+        
+        .nav-link:hover {
+            background-color: var(--light-bg);
+        }
+        
+        .nav-link.active {
+            background-color: var(--primary-color);
+            color: white;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        .search-section {
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+        
+        .search-form {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+        
+        .search-input {
+            display: flex;
+            gap: 10px;
+        }
+        
+        .search-input input {
+            flex: 1;
+            padding: 12px 15px;
+            border: 1px solid var(--border-color);
+            border-radius: 5px;
+            font-size: 1rem;
+            outline: none;
+        }
+        
+        .search-input input:focus {
+            border-color: var(--primary-color);
+        }
+        
+        .search-button {
+            padding: 12px 20px;
+            background-color: var(--primary-color);
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        
+        .search-button:hover {
+            background-color: #3367d6;
+        }
+        
+        .filters {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+        
+        .filter-group {
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+        }
+        
+        .filter-group label {
+            font-weight: bold;
+            font-size: 0.9rem;
+        }
+        
+        .filter-group select, .filter-group input {
+            padding: 8px 12px;
+            border: 1px solid var(--border-color);
+            border-radius: 5px;
+            font-size: 0.9rem;
+            outline: none;
+        }
+        
+        .results-section {
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            padding: 20px;
+        }
+        
+        .results-header {
+            font-weight: bold;
+            margin-bottom: 15px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid var(--border-color);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .results-count {
+            color: var(--primary-color);
+        }
+        
+        .results-tabs {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+        
+        .tab {
+            padding: 8px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: background-color 0.3s;
+        }
+        
+        .tab.active {
+            background-color: var(--primary-color);
+            color: white;
+        }
+        
+        .tab:not(.active) {
+            background-color: var(--light-bg);
+        }
+        
+        .tab:not(.active):hover {
+            background-color: #e9ecef;
+        }
+        
+        .results-content {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+        
+        .result-item {
+            border: 1px solid var(--border-color);
+            border-radius: 5px;
+            padding: 15px;
+            transition: box-shadow 0.3s;
+        }
+        
+        .result-item:hover {
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        .result-title {
+            font-weight: bold;
+            margin-bottom: 5px;
+            color: var(--primary-color);
+        }
+        
+        .result-meta {
+            font-size: 0.8rem;
+            color: #666;
+            margin-bottom: 10px;
+        }
+        
+        .result-content {
+            font-size: 0.9rem;
+            margin-bottom: 10px;
+        }
+        
+        .result-link {
+            display: inline-block;
+            color: var(--primary-color);
+            text-decoration: none;
+            font-size: 0.9rem;
+        }
+        
+        .result-link:hover {
+            text-decoration: underline;
+        }
+        
+        .loading {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 200px;
+        }
+        
+        .loading-spinner {
+            width: 40px;
+            height: 40px;
+            border: 4px solid rgba(0,0,0,0.1);
+            border-radius: 50%;
+            border-top-color: var(--primary-color);
+            animation: spin 1s ease-in-out infinite;
+        }
+        
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+        
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Clinical Decision Support System</h1>
+    </header>
+    
+    <div class="nav-bar">
+        <div class="nav-links">
+            <a href="/rag-chatbot/" class="nav-link">RAG Chatbot</a>
+            <a href="/medical-search/" class="nav-link active">Medical Knowledge Search</a>
+        </div>
+    </div>
+    
+    <div class="container">
+        <div class="search-section">
+            <div class="search-form">
+                <div class="search-input">
+                    <input type="text" id="search-query" placeholder="Search for medical conditions, treatments, research papers...">
+                    <button id="search-button" class="search-button">Search</button>
+                </div>
+                <div class="filters">
+                    <div class="filter-group">
+                        <label for="content-type">Content Type</label>
+                        <select id="content-type">
+                            <option value="all">All</option>
+                            <option value="research_papers">Research Papers</option>
+                            <option value="case_studies">Case Studies</option>
+                            <option value="treatment_guidelines">Treatment Guidelines</option>
+                        </select>
+                    </div>
+                    <div class="filter-group">
+                        <label for="year">Year</label>
+                        <select id="year">
+                            <option value="">Any</option>
+                            <option value="2023">2023</option>
+                            <option value="2022">2022</option>
+                            <option value="2021">2021</option>
+                            <option value="2020">2020</option>
+                        </select>
+                    </div>
+                    <div class="filter-group">
+                        <label for="keyword">Keyword</label>
+                        <input type="text" id="keyword" placeholder="Filter by keyword">
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="results-section">
+            <div class="results-header">
+                <div>Search Results</div>
+                <div class="results-count" id="results-count">0 results</div>
+            </div>
+            
+            <div class="results-tabs">
+                <div class="tab active" data-tab="all">All</div>
+                <div class="tab" data-tab="research_papers">Research Papers</div>
+                <div class="tab" data-tab="case_studies">Case Studies</div>
+                <div class="tab" data-tab="treatment_guidelines">Guidelines</div>
+            </div>
+            
+            <div class="loading hidden" id="loading">
+                <div class="loading-spinner"></div>
+            </div>
+            
+            <div class="results-content" id="results-content">
+                <div class="result-item">
+                    <div class="result-title">Search for medical knowledge to see results</div>
+                    <div class="result-content">
+                        Use the search bar above to find research papers, case studies, and treatment guidelines.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const searchQuery = document.getElementById('search-query');
+            const searchButton = document.getElementById('search-button');
+            const contentType = document.getElementById('content-type');
+            const yearFilter = document.getElementById('year');
+            const keywordFilter = document.getElementById('keyword');
+            const resultsCount = document.getElementById('results-count');
+            const resultsContent = document.getElementById('results-content');
+            const loading = document.getElementById('loading');
+            const tabs = document.querySelectorAll('.tab');
+            
+            let currentTab = 'all';
+            let searchResults = {};
+            
+            // Function to perform search
+            async function performSearch() {
+                const query = searchQuery.value.trim();
+                if (!query) return;
+                
+                // Show loading indicator
+                loading.classList.remove('hidden');
+                resultsContent.classList.add('hidden');
+                
+                // Prepare filters
+                const filters = {};
+                if (yearFilter.value) filters.year = parseInt(yearFilter.value);
+                if (keywordFilter.value) filters.keyword = keywordFilter.value;
+                if (contentType.value !== 'all') filters.type = contentType.value;
+                
+                try {
+                    const response = await fetch('/api/medical-knowledge-search/', {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json',
+                        },
+                        body: JSON.stringify({ query, filters }),
+                    });
+                    
+                    if (response.ok) {
+                        const data = await response.json();
+                        searchResults = data.results;
+                        displayResults();
+                    } else {
+                        const errorData = await response.json();
+                        alert(`Error: ${errorData.error || 'Something went wrong'}`);
+                    }
+                } catch (error) {
+                    alert(`Error: ${error.message || 'Something went wrong'}`);
+                } finally {
+                    // Hide loading indicator
+                    loading.classList.add('hidden');
+                    resultsContent.classList.remove('hidden');
+                }
+            }
+            
+            // Function to display results
+            function displayResults() {
+                resultsContent.innerHTML = '';
+                
+                // Count total results
+                let totalCount = 0;
+                let displayItems = [];
+                
+                // Research papers
+                if (searchResults.research_papers && (currentTab === 'all' || currentTab === 'research_papers')) {
+                    totalCount += searchResults.research_papers.length;
+                    
+                    searchResults.research_papers.forEach(paper => {
+                        displayItems.push({
+                            type: 'research_papers',
+                            html: `
+                                <div class="result-item" data-type="research_papers">
+                                    <div class="result-title">${paper.title}</div>
+                                    <div class="result-meta">${paper.authors} (${paper.year}) - ${paper.journal}</div>
+                                    <div class="result-content">${paper.summary}</div>
+                                    <a href="${paper.url}" target="_blank" class="result-link">View on PubMed</a>
+                                </div>
+                            `
+                        });
+                    });
+                }
+                
+                // Case studies
+                if (searchResults.case_studies && (currentTab === 'all' || currentTab === 'case_studies')) {
+                    totalCount += searchResults.case_studies.length;
+                    
+                    searchResults.case_studies.forEach(study => {
+                        displayItems.push({
+                            type: 'case_studies',
+                            html: `
+                                <div class="result-item" data-type="case_studies">
+                                    <div class="result-title">${study.title}</div>
+                                    <div class="result-meta">${study.patient_profile}</div>
+                                    <div class="result-content">
+                                        <strong>Findings:</strong> ${study.findings}<br>
+                                        <strong>Outcome:</strong> ${study.outcome}
+                                    </div>
+                                </div>
+                            `
+                        });
+                    });
+                }
+                
+                // Treatment guidelines
+                if (searchResults.treatment_guidelines && (currentTab === 'all' || currentTab === 'treatment_guidelines')) {
+                    totalCount += searchResults.treatment_guidelines.length;
+                    
+                    searchResults.treatment_guidelines.forEach(guideline => {
+                        displayItems.push({
+                            type: 'treatment_guidelines',
+                            html: `
+                                <div class="result-item" data-type="treatment_guidelines">
+                                    <div class="result-title">${guideline.title}</div>
+                                    <div class="result-meta">${guideline.organization} (${guideline.year})</div>
+                                    <div class="result-content">${guideline.recommendations}</div>
+                                </div>
+                            `
+                        });
+                    });
+                }
+                
+                // Update results count
+                resultsCount.textContent = `${totalCount} result${totalCount !== 1 ? 's' : ''}`;
+                
+                // Display items
+                if (displayItems.length > 0) {
+                    displayItems.forEach(item => {
+                        resultsContent.innerHTML += item.html;
+                    });
+                } else {
+                    resultsContent.innerHTML = `
+                        <div class="result-item">
+                            <div class="result-title">No results found</div>
+                            <div class="result-content">
+                                Try adjusting your search query or filters.
+                            </div>
+                        </div>
+                    `;
+                }
+            }
+            
+            // Event listener for search button
+            searchButton.addEventListener('click', performSearch);
+            
+            // Event listener for Enter key in search input
+            searchQuery.addEventListener('keypress', function(e) {
+                if (e.key === 'Enter') {
+                    performSearch();
+                }
+            });
+            
+            // Event listeners for filters
+            contentType.addEventListener('change', function() {
+                if (searchResults.research_papers || searchResults.case_studies || searchResults.treatment_guidelines) {
+                    displayResults();
+                }
+            });
+            
+            yearFilter.addEventListener('change', function() {
+                performSearch();
+            });
+            
+            keywordFilter.addEventListener('input', function() {
+                if (this.value.length > 2 || this.value.length === 0) {
+                    performSearch();
+                }
+            });
+            
+            // Event listeners for tabs
+            tabs.forEach(tab => {
+                tab.addEventListener('click', function() {
+                    tabs.forEach(t => t.classList.remove('active'));
+                    this.classList.add('active');
+                    currentTab = this.dataset.tab;
+                    displayResults();
+                });
+            });
+        });
+    </script>
+</body>
+</html> 

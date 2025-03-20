@@ -1,0 +1,82 @@
+[
+  {
+    "id": "med001",
+    "title": "Hypertension",
+    "content": "Hypertension, also known as high blood pressure, is a long-term medical condition in which the blood pressure in the arteries is persistently elevated. Blood pressure is expressed by two measurements, the systolic and diastolic pressures, which are the maximum and minimum pressures, respectively, in the arterial system. Normal blood pressure at rest is within the range of 100–140 mmHg systolic and 60–90 mmHg diastolic. Hypertension is present if the blood pressure is persistently at or above 140/90 mmHg for most adults. Different numbers apply to children. Ambulatory blood pressure monitoring over a 24-hour period appears more accurate than office-based blood pressure measurement.",
+    "symptoms": ["Headaches", "Shortness of breath", "Nosebleeds", "Flushing", "Dizziness", "Chest pain"],
+    "treatments": ["Lifestyle modifications", "Diuretics", "ACE inhibitors", "Angiotensin II receptor blockers", "Calcium channel blockers", "Beta-blockers"],
+    "risk_factors": ["Age", "Family history", "Obesity", "Sedentary lifestyle", "Tobacco use", "High sodium diet", "Excessive alcohol consumption", "Stress", "Certain chronic conditions"]
+  },
+  {
+    "id": "med002",
+    "title": "Type 2 Diabetes",
+    "content": "Type 2 diabetes is a long-term metabolic disorder that is characterized by high blood sugar, insulin resistance, and relative lack of insulin. Common symptoms include increased thirst, frequent urination, and unexplained weight loss. Symptoms may also include increased hunger, feeling tired, and sores that do not heal. Often symptoms come on slowly. Long-term complications from high blood sugar include heart disease, strokes, diabetic retinopathy which can result in blindness, kidney failure, and poor blood flow in the limbs which may lead to amputations. The sudden onset of hyperosmolar hyperglycemic state may occur; however, ketoacidosis is uncommon.",
+    "symptoms": ["Increased thirst", "Frequent urination", "Increased hunger", "Unintended weight loss", "Fatigue", "Blurred vision", "Slow-healing sores", "Frequent infections"],
+    "treatments": ["Healthy eating", "Regular exercise", "Weight loss", "Metformin", "Sulfonylureas", "Meglitinides", "Thiazolidinediones", "DPP-4 inhibitors", "GLP-1 receptor agonists", "SGLT2 inhibitors", "Insulin therapy"],
+    "risk_factors": ["Weight", "Fat distribution", "Inactivity", "Family history", "Race and ethnicity", "Age", "Prediabetes", "Gestational diabetes", "Polycystic ovary syndrome"]
+  },
+  {
+    "id": "med003",
+    "title": "Asthma",
+    "content": "Asthma is a common long-term inflammatory disease of the airways of the lungs. It is characterized by variable and recurring symptoms, reversible airflow obstruction, and easily triggered bronchospasms. Symptoms include episodes of wheezing, coughing, chest tightness, and shortness of breath. These may occur a few times a day or a few times per week. Depending on the person, asthma symptoms may become worse at night or with exercise. Asthma is thought to be caused by a combination of genetic and environmental factors. Environmental factors include exposure to air pollution and allergens. Other potential triggers include medications such as aspirin and beta blockers.",
+    "symptoms": ["Shortness of breath", "Chest tightness or pain", "Wheezing when exhaling", "Trouble sleeping caused by shortness of breath", "Coughing or wheezing attacks worsened by respiratory virus"],
+    "treatments": ["Inhaled corticosteroids", "Leukotriene modifiers", "Long-acting beta agonists", "Combination inhalers", "Theophylline", "Biologics", "Bronchial thermoplasty"],
+    "risk_factors": ["Family history", "Viral respiratory infections", "Allergies", "Occupational exposures", "Air pollution", "Obesity"]
+  },
+  {
+    "id": "med004",
+    "title": "Coronary Artery Disease",
+    "content": "Coronary artery disease (CAD), also known as ischemic heart disease (IHD), is a group of diseases that includes: stable angina, unstable angina, myocardial infarction, and sudden cardiac death. It is within the group of cardiovascular diseases of which it is the most common type. A common symptom is chest pain or discomfort which may travel into the shoulder, arm, back, neck, or jaw. Occasionally it may feel like heartburn. Usually symptoms occur with exercise or emotional stress, last less than a few minutes, and improve with rest. Shortness of breath may also occur and sometimes no symptoms are present. The first sign is occasionally a heart attack.",
+    "symptoms": ["Chest pain (angina)", "Shortness of breath", "Pain in the neck, jaw, throat, upper abdomen or back", "Nausea", "Fatigue", "Lightheadedness"],
+    "treatments": ["Lifestyle changes", "Medications", "Angioplasty and stenting", "Coronary artery bypass surgery"],
+    "risk_factors": ["Age", "Sex", "Family history", "Smoking", "High blood pressure", "High blood cholesterol levels", "Diabetes", "Overweight or obesity", "Physical inactivity", "High stress", "Unhealthy diet"]
+  },
+  {
+    "id": "med005",
+    "title": "Pneumonia",
+    "content": "Pneumonia is an inflammatory condition of the lung primarily affecting the small air sacs known as alveoli. Symptoms typically include some combination of productive or dry cough, chest pain, fever, and difficulty breathing. The severity of the condition is variable. Pneumonia is usually caused by infection with viruses or bacteria, and less commonly by other microorganisms. Identifying the responsible pathogen can be difficult. Diagnosis is often based on symptoms and physical examination. Chest X-rays, blood tests, and culture of the sputum may help confirm the diagnosis. The disease may be classified by where it was acquired, such as community- or hospital-acquired or healthcare-associated pneumonia.",
+    "symptoms": ["Chest pain when breathing or coughing", "Confusion or changes in mental awareness", "Cough, which may produce phlegm", "Fatigue", "Fever, sweating and shaking chills", "Lower than normal body temperature", "Nausea, vomiting or diarrhea", "Shortness of breath"],
+    "treatments": ["Antibiotics", "Cough medicine", "Fever reducers/pain relievers", "Hospitalization"],
+    "risk_factors": ["Age (very young or very old)", "Smoking", "Chronic disease", "Weakened or suppressed immune system", "Hospitalization", "Exposure to certain chemicals or pollutants"]
+  },
+  {
+    "id": "med006",
+    "title": "Rheumatoid Arthritis",
+    "content": "Rheumatoid arthritis (RA) is a long-term autoimmune disorder that primarily affects joints. It typically results in warm, swollen, and painful joints. Pain and stiffness often worsen following rest. Most commonly, the wrist and hands are involved, with the same joints typically involved on both sides of the body. The disease may also affect other parts of the body, including skin, eyes, lungs, heart, nerves and blood. This may result in a low red blood cell count, inflammation around the lungs, and inflammation around the heart. Fever and low energy may also be present.",
+    "symptoms": ["Tender, warm, swollen joints", "Joint stiffness that is usually worse in the mornings", "Fatigue, fever and loss of appetite", "Rheumatoid nodules", "Weight loss"],
+    "treatments": ["NSAIDs", "Steroids", "Disease-modifying antirheumatic drugs (DMARDs)", "Biologic agents", "JAK inhibitors", "Physical therapy", "Surgery"],
+    "risk_factors": ["Age", "Sex (more common in women)", "Family history", "Smoking", "Environmental exposures", "Obesity"]
+  },
+  {
+    "id": "med007",
+    "title": "Migraine",
+    "content": "A migraine is a primary headache disorder characterized by recurrent headaches that are moderate to severe. Typically, the headaches affect one half of the head, are pulsating in nature, and last from a few hours to 3 days. Associated symptoms may include nausea, vomiting, and sensitivity to light, sound, or smell. The pain is generally made worse by physical activity. Up to one-third of people affected have an aura: typically a short period of visual disturbance that signals that the headache will soon occur. Occasionally, an aura can occur with little or no headache following it.",
+    "symptoms": ["Severe throbbing or pulsing pain", "Sensitivity to light and sound", "Nausea and vomiting", "Aura (visual disturbances)", "Tingling or numbness in the face or extremities", "Difficulty speaking"],
+    "treatments": ["Pain-relieving medications", "Preventive medications", "Lifestyle adjustments", "Alternative medicine approaches"],
+    "risk_factors": ["Family history", "Age", "Sex (more common in women)", "Hormonal changes", "Stress", "Sleep changes", "Sensory stimuli", "Weather changes", "Medications", "Food additives"]
+  },
+  {
+    "id": "med008",
+    "title": "Chronic Obstructive Pulmonary Disease",
+    "content": "Chronic obstructive pulmonary disease (COPD) is a type of obstructive lung disease characterized by long-term breathing problems and poor airflow. The main symptoms include shortness of breath and cough with sputum production. COPD is a progressive disease, meaning it typically worsens over time. Eventually, everyday activities such as walking or getting dressed become difficult. Chronic bronchitis and emphysema are older terms used for different types of COPD. The term 'chronic bronchitis' is still used to define a productive cough that is present for at least three months each year for two years.",
+    "symptoms": ["Shortness of breath, especially during physical activities", "Wheezing", "Chest tightness", "Chronic cough that may produce mucus", "Frequent respiratory infections", "Lack of energy", "Unintended weight loss"],
+    "treatments": ["Bronchodilators", "Inhaled steroids", "Combination inhalers", "Oral steroids", "Phosphodiesterase-4 inhibitors", "Theophylline", "Antibiotics", "Lung therapies", "Surgery"],
+    "risk_factors": ["Tobacco smoke", "Occupational exposure to dusts and chemicals", "Exposure to fumes from burning fuel", "Age", "Genetics", "Asthma"]
+  },
+  {
+    "id": "med009",
+    "title": "Osteoarthritis",
+    "content": "Osteoarthritis (OA) is a type of joint disease that results from breakdown of joint cartilage and underlying bone. The most common symptoms are joint pain and stiffness. Usually the symptoms progress slowly over years. Initially they may occur only after exercise but can become constant over time. Other symptoms may include joint swelling, decreased range of motion, and, when the back is affected, weakness or numbness of the arms and legs. The most commonly involved joints are the two near the ends of the fingers and the base of the thumb; the knee, which is also the most commonly affected joint; the joint connecting the big toe to the foot; and the neck, lower back, shoulder, and hip.",
+    "symptoms": ["Pain", "Stiffness", "Tenderness", "Loss of flexibility", "Grating sensation", "Bone spurs", "Swelling"],
+    "treatments": ["Acetaminophen", "NSAIDs", "Duloxetine", "Physical therapy", "Occupational therapy", "Cortisone injections", "Lubrication injections", "Realigning bones", "Joint replacement"],
+    "risk_factors": ["Older age", "Sex (more common in women)", "Obesity", "Joint injuries", "Repeated stress on the joint", "Genetics", "Bone deformities", "Certain metabolic diseases"]
+  },
+  {
+    "id": "med010",
+    "title": "Depression",
+    "content": "Depression is a mental state of low mood and aversion to activity that can affect a person's thoughts, behavior, feelings, and sense of well-being. People with a depressed mood may feel sad, anxious, empty, hopeless, helpless, worthless, guilty, irritable, ashamed, or restless. They may lose interest in activities that were once pleasurable, experience loss of appetite or overeating, have problems concentrating, remembering details, or making decisions, and may contemplate, attempt, or commit suicide. Insomnia, excessive sleeping, fatigue, loss of energy, or aches, pains, or digestive problems that are resistant to treatment may also be present.",
+    "symptoms": ["Feelings of sadness, tearfulness, emptiness or hopelessness", "Angry outbursts, irritability or frustration", "Loss of interest or pleasure in most or all normal activities", "Sleep disturbances", "Tiredness and lack of energy", "Reduced appetite and weight loss or increased cravings for food and weight gain", "Anxiety, agitation or restlessness", "Slowed thinking, speaking or body movements", "Feelings of worthlessness or guilt", "Trouble thinking, concentrating, making decisions and remembering things", "Frequent or recurrent thoughts of death, suicidal thoughts, suicide attempts or suicide", "Unexplained physical problems, such as back pain or headaches"],
+    "treatments": ["Medications", "Psychotherapy", "Electroconvulsive therapy (ECT)", "Transcranial magnetic stimulation (TMS)", "Hospitalization and residential treatment"],
+    "risk_factors": ["Personality traits", "Traumatic or stressful events", "Family history", "History of other mental health disorders", "Abuse of alcohol or recreational drugs", "Serious or chronic illness", "Certain medications"]
+  }
+] 
