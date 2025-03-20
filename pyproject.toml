@@ -1,0 +1,9 @@
+[build-system]
+requires = ["setuptools>=65.5.1", "wheel>=0.40.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "cdss_chatbot"
+version = "1.0.0"
+description = "Clinical Decision Support System with RAG"
+requires-python = ">=3.9" 
