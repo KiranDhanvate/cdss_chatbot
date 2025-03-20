@@ -4,13 +4,10 @@
     {
       "src": "cdss_project/wsgi.py",
       "use": "@vercel/python",
-      "config": { "maxLambdaSize": "15mb", "runtime": "python3.9" }
-    },
-    {
-      "src": "build_files.sh",
-      "use": "@vercel/static-build",
       "config": {
-        "distDir": "staticfiles"
+        "maxLambdaSize": "15mb",
+        "runtime": "python3.9",
+        "buildCommand": "pip install -r requirements.txt"
       }
     }
   ],
@@ -25,6 +22,7 @@
     }
   ],
   "env": {
-    "DJANGO_SETTINGS_MODULE": "cdss_project.settings"
+    "DJANGO_SETTINGS_MODULE": "cdss_project.settings",
+    "PYTHON_VERSION": "3.9"
   }
 } 
